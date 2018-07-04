@@ -1,4 +1,6 @@
-Installation:
+## Installation
 
+```bash
 curl https://github.com/rcompt/cmps012b-pt.u18/tree/master/PA1/Makefile >> Makefile
-curl https://raw.githubusercontent.com/rcompt/cmps012b-pt.u18/master/PA1/RecursionTest.java > RecursionTest.java
+curl https://raw.githubusercontent.com/rcompt/cmps012b-pt.u18/master/PA1/RecursionTest.java >> RecursionTest.java
+```
