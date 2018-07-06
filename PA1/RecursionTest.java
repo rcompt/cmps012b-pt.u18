@@ -460,14 +460,14 @@ public class RecursionTest {
 		try{
 			Recursion.reverseArray3(A, 0, 3);
 			if(A[0] != 4 || A[1] != 1 || A[2] != 2 || A[3] != 3){
-				System.out.println("Test 4 Failed!");
+				System.out.println("Test 3 Failed!");
 			}
 			else{
 				points += 4;
-				System.out.println("Test 4 Passed!");
+				System.out.println("Test 3 Passed!");
 			}
 		}catch(Exception e){
-			System.out.println("Test 4 Failed from Runtime Error!");
+			System.out.println("Test 3 Failed from Runtime Error!");
 			System.out.println("Exception: " + e);			
 			System.out.println("Try running this test outside of this testing class and see where the exception occurs\n");
 		}
@@ -483,22 +483,22 @@ public class RecursionTest {
 			int test_flag = 0;
 			for (int i = 1; i < A.length - 4; i++) {
           		if (A[A.length - i - 1] != i + 4){
-					System.out.println("Test 3 Failed!");	
+					System.out.println("Test 4 Failed!");	
 					test_flag = 1;
 					break;				
 				}
         	}
 			if(test_flag == 0){
 				if (A[3] != A.length || A[A.length - 1] != 3){
-					System.out.println("Test 3 Failed!");
+					System.out.println("Test 4 Failed!");
 				}
 				else{
 					points += 4;
-					System.out.println("Test 3 Passed!");
+					System.out.println("Test 4 Passed!");
 				}
 			}
 		}catch(Exception e){
-			System.out.println("Test 3 Failed from Runtime Error!");
+			System.out.println("Test 4 Failed from Runtime Error!");
 			System.out.println("Exception: " + e);			
 			System.out.println("Try running this test outside of this testing class and see where the exception occurs\n");
 		}
