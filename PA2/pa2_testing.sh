@@ -65,7 +65,7 @@ for NUM in $(seq 1 $NUMTESTS); do
     if [ "$WORKING_VERSION" -ne "-1" ]; then
       break
     fi
-    diff -bBwu outfile$NUM.txt model-outfile$NUM-$VERSION.txt &> diff$NUM-$VERSION.txt >> diff$NUM-$VERSION.txt
+    diff -ZbBwu outfile$NUM.txt model-outfile$NUM-$VERSION.txt &> diff$NUM-$VERSION.txt >> diff$NUM-$VERSION.txt
     if [ -e diff$NUM-$VERSION.txt ] && [[ ! -s diff$NUM-$VERSION.txt ]]; then
       WORKING_VERSION=$VERSION
     fi
@@ -103,9 +103,8 @@ make -f Makefile clean
 
 if [ -e Search ] || [ -e *.class ]; then
   echo "WARNING: Makefile didn't successfully clean all files"
+  make -f Makefile_test clean
 fi
-
-make -f Makefile_test clean
 
 rm -f *out.txt *Work.txt
 
