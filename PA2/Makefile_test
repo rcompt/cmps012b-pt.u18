@@ -1,0 +1,31 @@
+#------------------------------------------------------------------------------
+# Another Makefile with macros
+#------------------------------------------------------------------------------
+
+JAVASRC = Search.java SearchTest.java
+SOURCES = README Makefile $(JAVASRC)
+MAINCLASS = SearchTest
+SEARCHCLASS = Search
+CLASSES = Search.class SearchTest.class
+JARFILE = SearchTest
+JARFILE2 = Search
+
+all: $(JARFILE) $(JARFILE2)
+
+$(JARFILE): $(CLASSES)
+	echo Main-class: $(MAINCLASS) > Manifest
+	jar cvfm $(JARFILE) Manifest $(CLASSES)
+	rm Manifest
+	chmod +x $(JARFILE)
+
+$(JARFILE2): $(CLASSES)
+	echo Main-class: $(SEARCHCLASS) > Manifest
+	jar cvfm $(JARFILE2) Manifest $(CLASSES)
+	rm Manifest
+	chmod +x $(JARFILE2) 	
+
+$(CLASSES): $(JAVASRC)
+	javac -Xlint $(JAVASRC)
+
+clean:
+	rm $(CLASSES) $(JARFILE) $(JARFILE2)
