@@ -7,7 +7,7 @@ curl https://raw.githubusercontent.com/rcompt/cmps012b-pt.u18/master/PA3/Makefil
 curl https://raw.githubusercontent.com/rcompt/cmps012b-pt.u18/master/PA3/ModelDictionaryTest.java >> ModelDictionaryTest.java
 ```
 
-Be sure to copy over your Dictionary.java file to the new directory ("pa3_testing"), before running the make file
+Be sure to copy over your Dictionary.java, DictionaryInterface.java, KeyNotFoundException.java, and DuplicateKeyException.java files to the new directory ("pa3_testing"), before running the make file
 
 ## Running
 
