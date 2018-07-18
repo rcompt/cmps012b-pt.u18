@@ -58,8 +58,8 @@ public class ModelDictionaryTest{
 			B.insert("test"+i,""+i);	
 		}
 
-		if(B.isEmpty() || B.lookup("test9999") != "9999"){
-			System.out.println("insert test 3 failed!");
+		if(B.isEmpty() || !B.lookup("test9999").equals("9999")){			
+			System.out.println("insert test 3 failed!: " + B.lookup("test9999"));
 		}else{
 			System.out.println("insert test 3 passed!");
 			points += 5;
@@ -636,7 +636,7 @@ public class ModelDictionaryTest{
 	}
 
 	public static void main(String[] args){
-		int all_total = 75;
+		int all_total = 80;
 		int all_points = 0;
 	
 		int total;
