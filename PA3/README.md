@@ -3,7 +3,7 @@
 ```bash
 mkdir pa3_testing
 cd pa3_testing
-curl https://github.com/rcompt/cmps012b-pt.u18/master/PA3/Makefile >> Makefile_Test
+curl https://raw.githubusercontent.com/rcompt/cmps012b-pt.u18/master/PA3/Makefile >> Makefile_Test
 curl https://raw.githubusercontent.com/rcompt/cmps012b-pt.u18/master/PA3/ModelDictionaryTest.java >> ModelDictionaryTest.java
 ```
 
