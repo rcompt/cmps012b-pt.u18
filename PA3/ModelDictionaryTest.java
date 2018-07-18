@@ -34,7 +34,7 @@ public class ModelDictionaryTest{
 	//Test 1
 	//////////////////////////////	
 		A.insert("test","123");
-		if(A.lookup("test") != "123"){
+		if(!A.lookup("test").equals("123")){
 			System.out.println("insert test 1 failed!");
 		}else{
 			System.out.println("insert test 1 passed!");
@@ -45,7 +45,7 @@ public class ModelDictionaryTest{
 	//////////////////////////////
 		A.insert("test2","1234");
 
-		if(A.isEmpty() || A.lookup("test") != "123"){
+		if(A.isEmpty() || !A.lookup("test").equals("123")){
 			System.out.println("insert test 2 failed!");
 		}else{
 			System.out.println("insert test 2 passed!");
