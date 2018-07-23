@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class SearchTest{
+public class SearchTest2{
 
 	//////////////////////////////
 	//Test Cases for mergeSort
@@ -242,19 +242,20 @@ public class SearchTest{
 	private static int binarySearchTests(){
 		int points = 0;
 		int total = 20;
-		String A[] = new String[1000];
-		
+		String[] A = new String[1000];
+		int[] lineNumber = new int[1000];
 		for(int i = 0; i < A.length; i++){
 			A[i] = Integer.toString(i*10);
+			lineNumber[i] = i+1;
 		}
 
 		System.out.println("=========================================");
 		System.out.println("binarySearch");
 
-		points += binarySearchTest1(A);
-		points += binarySearchTest2(A);
-		points += binarySearchTest3(A);
-		points += binarySearchTest4(A);
+		points += binarySearchTest1(A,lineNumber);
+		points += binarySearchTest2(A,lineNumber);
+		points += binarySearchTest3(A,lineNumber);
+		points += binarySearchTest4(A,lineNumber);
 
 		System.out.println("Test Case score: " + points + "/" + total);
 		
@@ -264,10 +265,10 @@ public class SearchTest{
 
 	//Test 1
 	//////////////////////////////
-	private static int binarySearchTest1(String[] A){
+	private static int binarySearchTest1(String[] A, int[] lineNumber){
 		int points = 0;
 		try{
-			int result = Search.binarySearch(A,0,A.length-1,"2000");
+			int result = Search.binarySearch(A, lineNumber, 0, A.length-1, "2000");
 			if(A[result].equals("2000")){
 				System.out.println("Test 1 Passed!");
 				points += 5;
@@ -284,11 +285,11 @@ public class SearchTest{
 
 	//Test 2
 	//////////////////////////////
-	private static int binarySearchTest2(String[] A){
+	private static int binarySearchTest2(String[] A, int[] lineNumber){
 
 		int points = 0;
 		try{
-			int result = Search.binarySearch(A,0,10,"80");
+			int result = Search.binarySearch(A,lineNumber,0,10,"80");
 			if(A[result].equals("80")){
 				System.out.println("Test 2 Passed!");
 				points += 5;
@@ -306,11 +307,11 @@ public class SearchTest{
 
 	//Test 3
 	//////////////////////////////
-	private static int binarySearchTest3(String[] A){
+	private static int binarySearchTest3(String[] A, int[] lineNumber){
 
 		int points = 0;
 		try{
-			int result = Search.binarySearch(A,0,10,"9000");
+			int result = Search.binarySearch(A,lineNumber,0,10,"9000");
 			if(result == -1){
 				System.out.println("Test 3 Passed!");
 				points += 5;
@@ -328,11 +329,11 @@ public class SearchTest{
 
 	//Test 4
 	//////////////////////////////
-	private static int binarySearchTest4(String[] A){
+	private static int binarySearchTest4(String[] A, int[] lineNumber){
 
 		int points = 0;
 		try{
-			int result = Search.binarySearch(A,0,500,"4990");
+			int result = Search.binarySearch(A,lineNumber,0,500,"4990");
 			if(A[result].equals("4990")){
 				System.out.println("Test 4 Passed!");
 				points += 5;
