@@ -22,11 +22,33 @@ for NUM in $(seq 1 $NUMTESTS); do
 done
 
 curl $SRCDIR/ModelQueueTest.java > ModelQueueTest.java
-curl $SRCDIR/TestObj1.java > TextObj1.java
+curl $SRCDIR/TestObj1.java > TestObj1.java
 curl $SRCDIR/Makefile_test > Makefile_test
 
 echo ""
 echo ""
+
+echo "Press Enter To Continue with QueueTest Results"
+read verbose
+echo ""
+echo ""
+make -f Makefile_test
+echo ""
+echo ""
+timeout 5 java ModelQueueTest -v > QueueTest-out.txt &>> QueueTest-out.txt
+progresult="$(tail -n 1 QueueTest-out.txt)"
+head -n -1 QueueTest-out.txt
+
+echo ""
+echo ""
+
+make -f Makefile_test clean
+
+
+echo ""
+echo ""
+echo "Press enter to continue to check Makefile"
+read verbose
 
 make
 
@@ -61,7 +83,7 @@ for NUM in $(seq 1 $NUMTESTS); do
   echo "=========="
   echo "Trace $NUM Test:"
   echo "=========="
-  #cat diff-trc$NUM.txt
+  cat diff-trc$NUM.txt
   echo "=========="
 
   cat diff-rpt$NUM.txt diff-trc$NUM.txt > diff$NUM.txt
@@ -94,17 +116,6 @@ fi
 
 echo ""
 echo ""
-
-echo "Press Enter To Continue with QueueTest Results"
-read verbose
-
-make -f Makefile_test
-
-timeout 5 java ModelQueueTest -v > QueueTest-out.txt &>> QueueTest-out.txt
-progresult="$(tail -n 1 QueueTest-out.txt)"
-head -n -1 QueueTest-out.txt
-
-echo ""
 GIMMEPOINTS=20
 let finalpoints=$progresult+$simulationtestpoints+$GIMMEPOINTS
 
@@ -115,6 +126,7 @@ echo "*******************************"
 if [ "$DEBUG" -eq "0" ]; then
 	rm -f *out.txt
 	rm -f *.class ModelQueueTest* garbage* TestObj1*
+	rm -f Makefile_test
 fi
 
 
