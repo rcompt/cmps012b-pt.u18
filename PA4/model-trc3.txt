@@ -1,4 +1,4 @@
-Trace file: infile3.txt.trc
+Trace file: infile3.trc
 5 Jobs:
 (1, 5, *) (1, 6, *) (2, 4, *) (3, 5, *) (4, 1, *) 
 
