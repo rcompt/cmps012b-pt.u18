@@ -912,7 +912,7 @@ public class ModelQueueTest{
 		System.out.println("=========================================");
 		System.out.println("Total score: " + all_points + "/" + all_total);
 		System.out.println("=========================================");
-		System.out.println(all_points);
+		//System.out.println(all_points);
 	}
 
 }
