@@ -1,4 +1,4 @@
-Trace file: infile7.txt.trc
+Trace file: infile7.trc
 4 Jobs:
 (1, 1, *) (10, 10, *) (100, 100, *) (1000, 1000, *) 
 
