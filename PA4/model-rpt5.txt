@@ -1,4 +1,4 @@
-Report file: infile5.txt.rpt
+Report file: infile5.rpt
 5 Jobs:
 (5, 5, *) (5, 1, *) (5, 3, *) (5, 5, *) (5, 3, *) 
 
