@@ -1,4 +1,4 @@
-Report file: infile10.txt.rpt
+Report file: infile10.rpt
 2 Jobs:
 (6, 94, *) (80, 20, *)
 
