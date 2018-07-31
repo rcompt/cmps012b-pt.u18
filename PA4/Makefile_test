@@ -36,4 +36,4 @@ $(JARFILE2): $(CLASSES)
 	$(JAVAC) $<
 
 clean:
-	rm *.class $(JARFILE) $(JARFILE2)
+	rm *.class $(JARFILE)
