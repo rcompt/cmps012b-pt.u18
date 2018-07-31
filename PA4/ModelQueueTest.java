@@ -1,4 +1,4 @@
-public class QueueTest{
+public class ModelQueueTest{
 
 	public static int queueTests(){
 		int points = 0;
