@@ -134,7 +134,7 @@ int newDictTests(){
 	}else{
 		printf("newDictionary test 1 failed!\n");
 	}
-
+	freeDictionary(&newDict);
 	printf("----------------------------\n");
 	printf("newDictionary score: %d / %d\n", points, total);
 	printf("============================\n");
