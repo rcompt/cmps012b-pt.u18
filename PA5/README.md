@@ -10,7 +10,7 @@ curl https://raw.githubusercontent.com/rcompt/cmps012b-pt.u18/master/PA5/Diction
 make -f Makefile_test
 ```
 
-Be sure to copy over your Queue.java, QueueInterface.java, QueueTest.java, QueueEmptyException.java, Simulation.java, Job.java, and Makefile files to the new directory ("pa4_testing"), before running pa4-testing.sh
+Be sure that the output file DictionaryModelTest has been created and that your Dictionary.c and Dictionary.h files were copied over correctly.
 
 ## Running
 
