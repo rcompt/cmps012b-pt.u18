@@ -15,5 +15,5 @@ Be sure to copy over your Queue.java, QueueInterface.java, QueueTest.java, Queue
 ## Running
 
 ```bash
-DicitonaryModelTest
+DictonaryModelTest
 ```
