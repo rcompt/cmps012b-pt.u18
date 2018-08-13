@@ -396,6 +396,7 @@ int printDictionaryTests(Dictionary dict){
 		fprintf(out,"Inserting: %s -> %s\n",tkey,tvalue);
 		printDictionary(out, dict);
 	}
+	fclose(out);
 	
 	printf("printDictionary test 1 passed!\n");	
 	points += 9;
