@@ -46,7 +46,7 @@ public class ModelQueueTest{
 	//////////////////////////////	
 		try{
 			for(int i = 0; i < testSize; i++){
-				A.enqueue(new TestObj1(i));
+				A.enqueue(new TestObj1(i+1));
 			}
 			for(int i = 0; i < testSize; i++){
 				TestObj1 obj = (TestObj1) A.dequeue();
@@ -66,7 +66,7 @@ public class ModelQueueTest{
 	//////////////////////////////	
 		try{
 			for(int i = 0; i < testSize; i++){
-				B.enqueue(new TestObj1(i));
+				B.enqueue(new TestObj1(i+1));
 			}
 			B.dequeueAll();
 			if(B.isEmpty()){
@@ -84,7 +84,7 @@ public class ModelQueueTest{
 	//////////////////////////////	
 		try{
 			B = new Queue();
-			B.enqueue(new TestObj1(1));
+			B.enqueue(new TestObj1(2));
 			if(!B.isEmpty()){
 				System.out.println("isEmpty test 4 passed!");
 				points += 1;
@@ -130,10 +130,10 @@ public class ModelQueueTest{
 	//Test 2
 	//////////////////////////////	
 		try{
-			for(int i = 0; i < 10000; i++){
+			for(int i = 0; i < 1000; i++){
 				A.enqueue(new TestObj1(i));
 			}
-			if(A.length() != B.length() && A.length() == 10000){
+			if(A.length() != B.length() && A.length() == 1000){
 				System.out.println("length test 2 passed!");
 				points += 1;
 			}else{
@@ -147,10 +147,10 @@ public class ModelQueueTest{
 	//Test 3
 	//////////////////////////////	
 		try{
-			for(int i = 0; i < 5000; i++){
+			for(int i = 0; i < 500; i++){
 				TestObj1 test = (TestObj1) A.dequeue();
 			}
-			if(A.length() != B.length() && A.length() == 5000){
+			if(A.length() != B.length() && A.length() == 500){
 				System.out.println("length test 3 passed!");
 				points += 1;
 			}else{
@@ -164,10 +164,10 @@ public class ModelQueueTest{
 	//Test 4
 	//////////////////////////////	
 		try{
-			for(int i = 0; i < 5000; i++){
+			for(int i = 0; i < 500; i++){
 				B.enqueue(new TestObj1(i));
 			}
-			if(A.length() == B.length() && B.length() == 5000){
+			if(A.length() == B.length() && B.length() == 500){
 				System.out.println("length test 4 passed!");
 				points += 1;
 			}else{
@@ -196,7 +196,7 @@ public class ModelQueueTest{
 	//Test 6
 	//////////////////////////////	
 		try{
-			for(int i = 0; i < 5000; i++){
+			for(int i = 0; i < 500; i++){
 				TestObj1 test = (TestObj1) A.dequeue();
 			}
 			if(A.length() == B.length() && A.length() == 0){
@@ -230,7 +230,7 @@ public class ModelQueueTest{
 	//Test 1
 	//////////////////////////////	
 		try{
-			A.enqueue(new TestObj1(1));
+			A.enqueue(new TestObj1(2));
 			if(A.length() != B.length() && A.length() == 1 && !A.isEmpty()){
 				System.out.println("enqueue test 1 passed!");
 				points += 1;
@@ -245,9 +245,9 @@ public class ModelQueueTest{
 	//Test 2
 	//////////////////////////////	
 		try{
-			A.enqueue(new TestObj1(2));
 			A.enqueue(new TestObj1(3));
 			A.enqueue(new TestObj1(4));
+			A.enqueue(new TestObj1(5));
 			if(A.length() == 4 && !A.isEmpty()){
 				System.out.println("enqueue test 2 passed!");
 				points += 1;
@@ -262,10 +262,10 @@ public class ModelQueueTest{
 	//Test 3
 	//////////////////////////////	
 		try{
-			for(int i = 0; i < 10000; i++){
-				B.enqueue(new TestObj1(i));
+			for(int i = 0; i < 1000; i++){
+				B.enqueue(new TestObj1(i+1));
 			}
-			if(B.length() == 10000 && !B.isEmpty()){
+			if(B.length() == 1000 && !B.isEmpty()){
 				System.out.println("enqueue test 3 passed!");
 				points += 1;
 			}else{
@@ -279,7 +279,7 @@ public class ModelQueueTest{
 	//Test 4
 	//////////////////////////////	
 		try{
-			TestObj1 obj = new TestObj1(0);
+			TestObj1 obj = new TestObj1(1);
 			if(((TestObj1)B.peek()).equals(obj)){
 				System.out.println("enqueue test 4 passed!");
 				points += 1;
@@ -295,9 +295,9 @@ public class ModelQueueTest{
 	//////////////////////////////	
 		try{
 			A = new Queue();
-			TestObj1 obj = new TestObj1(1);
-			A.enqueue(new TestObj1(1));
-			for(int i = 2; i < 1000; i++){
+			TestObj1 obj = new TestObj1(2);
+			A.enqueue(new TestObj1(2));
+			for(int i = 3; i < 1000; i++){
 				A.enqueue(new TestObj1(i));
 			}
 			if(((TestObj1)A.dequeue()).equals(obj)){
@@ -507,8 +507,8 @@ public class ModelQueueTest{
 	//Test 1
 	//////////////////////////////	
 		try{
-			A.enqueue(new TestObj1(1));
-			if(((TestObj1)A.peek()).equals(new TestObj1(1))){
+			A.enqueue(new TestObj1(100));
+			if(((TestObj1)A.peek()).equals(new TestObj1(100))){
 				System.out.println("peek test 1 passed!");
 				points += 1;
 			}else{
@@ -522,7 +522,7 @@ public class ModelQueueTest{
 	//Test 2
 	//////////////////////////////	
 		try{
-			B.enqueue(new TestObj1(1));
+			B.enqueue(new TestObj1(100));
 			if(((TestObj1)B.peek()).equals((TestObj1)A.peek())){
 				System.out.println("peek test 2 passed!");
 				points += 1;
@@ -538,13 +538,13 @@ public class ModelQueueTest{
 	//////////////////////////////	
 		try{
 			B = new Queue();
-			for(int i = 0; i < 10000; i++){
+			for(int i = 0; i < 1000; i++){
 				B.enqueue(new TestObj1(i));
 			}
-			for(int i = 0; i < 9000; i++){
+			for(int i = 0; i < 900; i++){
 				TestObj1 obj = (TestObj1) B.dequeue();
 			}
-			if(((TestObj1)B.peek()).equals(new TestObj1(9000))){
+			if(((TestObj1)B.peek()).equals(new TestObj1(900))){
 				System.out.println("peek test 3 passed!");
 				points += 1;
 			}else{
@@ -560,18 +560,18 @@ public class ModelQueueTest{
 		try{
 			B = new Queue();
 			for(int i = 0; i < 100; i++){
-				B.enqueue(new TestObj1(i));
+				B.enqueue(new TestObj1(i+1));
 			}
 			for(int i = 0; i < 50; i++){
 				TestObj1 obj = (TestObj1) B.dequeue();
 			}
 			for(int i = 0; i < 1000; i++){
-				B.enqueue(new TestObj1(i));
+				B.enqueue(new TestObj1(i+1));
 			}
 			for(int i = 0; i < 500; i++){
 				TestObj1 obj = (TestObj1) B.dequeue();
 			}
-			if(((TestObj1)B.peek()).equals(new TestObj1(450))){
+			if(((TestObj1)B.peek()).equals(new TestObj1(451))){
 				System.out.println("peek test 4 passed!");
 				points += 1;
 			}else{
@@ -670,7 +670,7 @@ public class ModelQueueTest{
 	//Test 2
 	//////////////////////////////	
 		try{
-			for(int i = 0; i < 10000; i++){
+			for(int i = 0; i < 1000; i++){
 				A.enqueue(new TestObj1(i));
 			}
 			A.dequeueAll();
@@ -688,7 +688,7 @@ public class ModelQueueTest{
 	//Test 3
 	//////////////////////////////	
 		try{
-			for(int i = 0; i < 10000; i++){
+			for(int i = 0; i < 1000; i++){
 				A.enqueue(new TestObj1(i));
 			}
 			for(int i = 0; i < 500; i++){
@@ -709,10 +709,10 @@ public class ModelQueueTest{
 	//Test 4
 	//////////////////////////////	
 		try{
-			for(int i = 0; i < 10000; i++){
+			for(int i = 0; i < 1000; i++){
 				A.enqueue(new TestObj1(i));
 			}
-			for(int i = 0; i < 10000; i++){
+			for(int i = 0; i < 1000; i++){
 				TestObj1 obj = (TestObj1) A.dequeue();				
 			}
 			A.dequeueAll();
@@ -728,16 +728,16 @@ public class ModelQueueTest{
 	//Test 5
 	//////////////////////////////	
 		try{
-			for(int i = 0; i < 10000; i++){
+			for(int i = 0; i < 1000; i++){
 				A.enqueue(new TestObj1(i));
 			}
-			for(int i = 0; i < 5000; i++){
+			for(int i = 0; i < 500; i++){
 				TestObj1 obj = (TestObj1) A.dequeue();				
 			}
-			for(int i = 0; i < 5000; i++){
+			for(int i = 0; i < 500; i++){
 				A.enqueue(new TestObj1(i));
 			}
-			for(int i = 0; i < 10000; i++){
+			for(int i = 0; i < 1000; i++){
 				TestObj1 obj = (TestObj1) A.dequeue();				
 			}
 			A.dequeueAll();
@@ -753,7 +753,7 @@ public class ModelQueueTest{
 	//Test 6
 	//////////////////////////////	
 		try{
-			for(int i = 0; i < 10000; i++){
+			for(int i = 0; i < 1000; i++){
 				A.enqueue(new TestObj1(i));
 				TestObj1 obj = (TestObj1) A.dequeue();	
 			}
@@ -787,8 +787,8 @@ public class ModelQueueTest{
 	//Test 1
 	//////////////////////////////	
 		try{
-			A.enqueue(new TestObj1(1));
-			if(A.toString().equals("1 ")){
+			A.enqueue(new TestObj1(10));
+			if(A.toString().equals("10 ")){
 				System.out.println("toString test 1 passed!");
 				points += 1;
 			}else{
@@ -802,7 +802,7 @@ public class ModelQueueTest{
 	//Test 2
 	//////////////////////////////	
 		try{
-			B.enqueue(new TestObj1(1));
+			B.enqueue(new TestObj1(10));
 			if(A.toString().equals(B.toString())){
 				System.out.println("toString test 2 passed!");
 				points += 1;
@@ -820,8 +820,8 @@ public class ModelQueueTest{
 			B = new Queue();
 			String testStr = "";
 			for(int i = 0; i < 1000; i++){
-				B.enqueue(new TestObj1(i));
-				testStr += i + " ";
+				B.enqueue(new TestObj1(i+1));
+				testStr += (i+1) + " ";
 			}
 			if(B.toString().equals(testStr)){
 				System.out.println("toString test 3 passed!");
@@ -840,7 +840,7 @@ public class ModelQueueTest{
 			B = new Queue();
 			String testStr = "";
 			for(int i = 0; i < 100; i++){
-				Job job = new Job(i,i*2);
+				Job job = new Job(i,i*3);
 				B.enqueue(job);
 				testStr += job.toString() + " ";
 			}
@@ -861,7 +861,7 @@ public class ModelQueueTest{
 			B = new Queue();
 			String testStr = "";
 			for(int i = 0; i < 100; i++){
-				Job job = new Job(i,i*2);
+				Job job = new Job(i,i*3);
 				B.enqueue(job);
 				testStr += job.toString() + " ";
 			}
@@ -882,7 +882,7 @@ public class ModelQueueTest{
 			A = new Queue();
 			String testStr = "";
 			for(int i = 0; i < 100; i++){
-				Job job = new Job(i,i*2);
+				Job job = new Job(i,i*3);
 				A.enqueue(job);
 			}
 			if(B.toString().equals(A.toString())){
