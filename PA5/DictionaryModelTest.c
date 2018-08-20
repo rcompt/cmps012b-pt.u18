@@ -44,7 +44,7 @@ int isEmptyTests(Dictionary dict){
 		sprintf(tkey,"key_%d",i);
 		delete(dict,tkey);
 		if(i < (testSize - 1) && isEmpty(dict)){
-			printf("isEmpty test 3 failed!: Key == %s\n",tkey);
+			printf("isEmpty test 3 failed!\n");
 			flag = 0;
 			break;
 		}
@@ -53,7 +53,7 @@ int isEmptyTests(Dictionary dict){
 		printf("isEmpty test 3 passed!\n");
 		points += 3;
 	}else{
-		printf("isEmpty test 3 failed!: dict size: %d\n", size(dict));
+		printf("isEmpty test 3 failed!\n");
 	}
 	
 	printf("----------------------------\n");
@@ -447,6 +447,7 @@ int main(int argc, char* argv[]){
 
 	printf("Overall Score: %d / 80\n", points);
 	printf("============================\n");
+	printf("%d\n",points);
 
 	return 0;
 }
